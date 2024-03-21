@@ -8,7 +8,7 @@ defmodule TripPlanner.Contexts.Journeys.Delete do
   alias TripPlanner.Journey
 
   @doc """
-  Deletes a journey.
+  Deletes a journey with associated join records.
 
   ## Examples
 
