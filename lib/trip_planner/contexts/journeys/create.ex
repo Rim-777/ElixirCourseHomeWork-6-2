@@ -22,7 +22,8 @@ defmodule TripPlanner.Contexts.Journeys.Create do
       }
 
       iex> create_journey(attrs)
-      {:ok, %Journey{}}
+      {:ok, %Journey{date: ~N[2024-03-14 19:13:00],
+                     places: [%Place{name: "Valencia"}, %Place{name: "Malaga"}]}}
 
       iex> create_journey(%{})
       {:error, %Ecto.Changeset{}}
