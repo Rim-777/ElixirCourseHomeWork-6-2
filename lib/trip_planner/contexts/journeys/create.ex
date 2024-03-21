@@ -37,7 +37,7 @@ defmodule TripPlanner.Contexts.Journeys.Create do
     |> Repo.insert()
   end
 
-  def build_attrs(attrs) do
+  defp build_attrs(attrs) do
     attrs |> Map.replace(:places, parse_places(attrs))
   end
 
