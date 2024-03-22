@@ -50,12 +50,11 @@ defmodule TripPlanner.Contexts.Journeys.Create do
   defp add_timestamps(place_attrs) do
     datetime = DateTime.utc_now() |> DateTime.truncate(:second)
 
-    place_attrs
-    |> Enum.map(
-      &(&1
-        |> Map.put_new(:inserted_at, datetime)
-        |> Map.put_new(:updated_at, datetime))
-    )
+    Enum.map(place_attrs, fn map ->
+      map
+      |> Map.put_new(:inserted_at, datetime)
+      |> Map.put_new(:updated_at, datetime)
+    end)
   end
 
   defp insert_and_get_all(place_attrs) do
